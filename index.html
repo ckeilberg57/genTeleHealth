@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Demo Landing</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+.w3-row-padding img {margin-bottom: 12px}
+/* Set the width of the sidebar to 120px */
+.w3-sidebar {width: 120px;background: #222;}
+/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+#main {margin-left: 120px}
+/* Remove margins from "page content" on small screens */
+@media only screen and (max-width: 600px) {#main {margin-left: 0}}
+.container {
+  position: relative;
+  height: 800px;
+  width: 1400px;
+  overflow: hidden;
+  padding-top: 50%; /* 16:9 Aspect Ratio */
+}
+.responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+</style>
+</head>
+<body class="w3-black">
+
+<!-- Icon Bar (Sidebar - hidden on small screens) -->
+<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+  <!-- Avatar image in top left corner -->
+  <img src="cross.png" style="width:100%">
+  <a href="https://ckeilberg57.github.io/ManuMap/"
+     onclick="window.open('https://ckeilberg57.github.io/ManuMap/',
+                        'newwindow',          
+                        'width=900,height=700,top=0,left=1700');
+                 return false;" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-building w3-xxlarge"></i>
+    <p>ROUNDING HOSPITAL MAP</p>
+  </a>
+  <a href="http://cklab-pexmgr.ck-collab-engtest.com"
+     onclick="window.open('https://cklab-pexmgr.ck-collab-engtest.com', 
+                         'newwindow', 
+                         'width=900,height=1080,top=0,left=850'); 
+              return false;" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-eye w3-xxlarge"></i>
+    <p>NATIVE MONITOR</p>
+  </a>
+  <a href="https://ckeilberg57.github.io/paint-114/" 
+         onclick="window.open('https://ckeilberg57.github.io/paint-114/', 
+                         'newwindow', 
+                         'width=900,height=700,top=0,left=0');
+                  return false;" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-bed w3-xxlarge"></i>
+    <p>BED AND CART MOCKUP</p>
+  </a>
+  <a href="https://outlook.office.com/calendar/0/deeplink/compose?rru=addevent&path=%2Fcalendar%2Faction%2Fcompose&startdt=2023-02-08T19%3A00%3A00Z&enddt=2023-02-08T20%3A00%3A00Z&subject=Baptist%20-%20Virtual%20Medical%20Session"  
+    onclick="window.open('https://outlook.office.com/calendar/0/deeplink/compose?rru=addevent&path=%2Fcalendar%2Faction%2Fcompose&startdt=2023-02-08T19%3A00%3A00Z&enddt=2023-02-08T20%3A00%3A00Z&subject=Baptist%20-%20Virtual%20Medical%20Session', 
+                         'newwindow', 
+                         'width=1000,height=1080,top=0,left=960'); 
+              return false;" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-calendar w3-xxlarge"></i>
+    <p>LAUNCH CALENDAR EXAMPLE</p>
+  </a>
+  <a href="https://www.figma.com/proto/UJyvLeguiy1Q5U9OKjuZi0/Prototype_USA?node-id=2%3A10497&starting-point-node-id=2%3A10497"  
+    onclick="window.open('https://www.figma.com/proto/UJyvLeguiy1Q5U9OKjuZi0/Prototype_USA?node-id=2%3A10497&starting-point-node-id=2%3A10497', 
+                         'newwindow', 
+                         'width=1400,height=1080,top=0,left=650'); 
+              return false;" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-clock-o w3-xxlarge"></i>
+    <p>LAUNCH WAITING RM</p>
+  </a>
+  <a href="https://cklab-edges.ck-collab-engtest.com/webapp3/step-by-step?name=Patient&conference=countdown&role=guest"  
+    onclick="window.open('https://cklab-edges.ck-collab-engtest.com/webapp3/step-by-step?name=Patient&conference=countdown&role=guest', 
+                         'newwindow', 
+                         'width=1000,height=1080,top=0,left=900'); 
+              return false;" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-film w3-xxlarge"></i>
+    <p>LAUNCH VIDEO PLAYBACK VMR</p>
+  </a>
+</nav>
+
+<!-- Navbar on small screens (Hidden on medium and large screens) -->
+<div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+  <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+    <a href="https://ckeilberg57.github.io/ManuMap/" class="w3-bar-item w3-button" style="width:25% !important">MAP</a>
+    <a href="https://docs.pexip.com" class="w3-bar-item w3-button" style="width:25% !important">MEDICAL LIBRARY</a>
+    <a href="http://cklab-pexmgr-ck-collab-engtest.com" class="w3-bar-item w3-button" style="width:25% !important">MONITOR</a>
+    <a href="https://medical-demo.ck-collab-engtest.com/webapp/#/?conference=medical123&name=Provider%20Keilberg&callType=video&role=host&pin=2022"
+    onclick="window.open('https://medical.ck-collab-engtest.com/webapp/#/?conference=medical123&name=Provider%20Keilberg&callType=video&role=host&pin=2022', 
+                         'newwindow', 
+                         'width=700,height=1080,top=0,left=960'); 
+              return false;" class="w3-bar-item w3-button" style="width:25% !important">LAUNCH</a>
+  </div>
+</div>
+
+<!-- Page Content -->
+<div class="w3-padding-large" id="main">
+  <!-- Header/Home -->
+  <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
+    <h1 class="w3-jumbo"><span class="w3-hide-small">Welcome</span> Demo User</h1>
+    <p>Mission: Delivering quality demos with exceptional results</p>
+    <img src="cklab_hc_logo.png" alt="telehealth" class="w3-image" width="400" height="400">
+  </header>
+
+  <!-- About Section -->
+  <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
+    <h2 class="w3-text-light-grey">One-stop shop to showcase the power of Pexip</h2>
+    <hr style="width:200px" class="w3-opacity">
+    <p>Pexip is a best-in-class fully customizable, flexible, and scalable video engine powering both small-to-large HealthCare clients and TeleHealth providers
+    </p>
+  
+    <button class="w3-button w3-light-grey w3-padding-large w3-section">
+      <a href="https://pexip.github.io/pexip-genesys-agent-blueprint/customer-app/"
+         onclick="window.open('https://pexip.github.io/pexip-genesys-agent-blueprint/customer-app/', 
+                         'newwindow', 
+                         'width=300,height=300,top=0,left=1400');
+                  return false;">
+      <i class="fa fa-phone"></i> Launch Contact Center Example - Patient
+      </a>
+    </button>
+    <button class="w3-button w3-light-grey w3-padding-large w3-section">
+      <a href="https://login.usw2.pure.cloud/#/authenticate"
+         onclick="window.open('https://login.usw2.pure.cloud/#/authenticate', 
+                         'newwindow', 
+                         'width=900,height=1080,top=0,left=0');
+                  return false;">
+      <i class="fa fa-headphones"></i> Launch Contact Center Example - Agent
+      </a>
+    </button>
+    <p></p>
+        <button class="w3-button w3-light-grey w3-padding-large w3-section">
+      <a href="https://app.powerbi.com/groups/me/reports/96605e7a-aba6-4e16-9f08-a82ab80965fb/ReportSectioncd6f5a0baa0a0ceddc59" target="_blank">
+      <i class="fa fa-pie-chart"></i> Display ]Pexip[ API reporting with PowerBI
+      </a>
+    </button>
+
+    <!-- Grid for demo tables -->
+    <h3 class="w3-padding-16 w3-text-light-grey">Provider and Patient Links</h3>
+    <div class="w3-row-padding" style="margin:0 -16px">
+      <div class="w3-half w3-margin-bottom">
+        <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
+          <li class="w3-dark-grey w3-xlarge w3-padding-32">Provider</li>
+          <a href="https://cklab-edges.ck-collab-engtest.com/webapp3/?name=Provider%20Demo%20User&conference=baptistdr" target="_blank">
+            <li class="w3-padding-16">Provider - Express Login</li>
+          </a>
+          <a href="https://ck-collab-engtest.com/webapp/#/?conference=apptMD1234&name=Provider%20Demo%20User&callType=video&role=host&pin=2022" target="_blank">
+          <li class="w3-padding-16">Provider - AdHOC VMR</li>
+          </a>
+          <li class="w3-padding-16">Provider - Static VMR</li>
+          </li>
+          <li class="w3-light-grey w3-padding-24">
+            <a href="https://pexip.showpad.com/share/7QvUy2vraoJVBTJ5rGKPK" target="_blank">
+            <button class="w3-button w3-white w3-padding-large w3-hover-black">Epic Simulation</button>
+          </li>
+        </a>
+        </ul>
+      </div>
+
+      <div class="w3-half">
+        <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
+          <li class="w3-dark-grey w3-xlarge w3-padding-32">Patient</li>
+          <a href="https://cklab-edges.ck-collab-engtest.com/webapp3/step-by-step?name=Patient&conference=baptistdr&role=guest" target="_blank">
+            <li class="w3-padding-16">Patient 1 - Step-by-Step Login</li>
+          </a>
+          <a href="https://ck-collab-engtest.com/webapp/#/?conference=apptMD1234&name=Patient&callType=video&role=guest" target="_blank">
+            <li class="w3-padding-16">Patient 1 - AdHOC</li>
+          </a>
+          <li class="w3-padding-16">Patient 2 - Static</li>
+          </li>
+          <li class="w3-light-grey w3-padding-24">
+            <button class="w3-button w3-white w3-padding-large w3-hover-black">Future</button>
+          </li>
+        </ul>
+      </div>
+    <!-- End Grid/Pricing tables -->
+    </div>
+  
+    <!-- Contact Section -->
+   <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
+    <h2 class="w3-text-light-grey">Contact Us</h2>
+    <hr style="width:200px" class="w3-opacity">
+  
+    <div class="w3-section">
+      <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Herndon, VA - US & Oslo - Norway</p>
+      <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: Shane.Sullivan@pexip.com or Chris.Keilberg@pexip.com</p>
+    </div><br>
+
+    <!-- Grid for PDF Examples -->
+    <div class="container"> 
+      <iframe class="responsive-iframe" src="./pdf/cklab-pdfs.pdf"></iframe>
+    </div>
+    <!-- End Grid/Pricing tables -->
+    </div>
+
+    <!-- Footer -->
+  <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+  <!-- End footer -->
+  </footer>
+
+<!-- END PAGE CONTENT -->
+</div>
+
+</body>
+</html>
