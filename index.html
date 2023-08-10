@@ -286,7 +286,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
         async function checkURLStatus() {
             try {
                 const response = await fetch(url);
-                if (response.status >= 200 && response.status < 300) {
+                if (response.ok) {
                     statusCircle.classList.remove('red');
                     statusCircle.classList.add('green');
                     statusText.textContent = 'Lab status: Accessible';
