@@ -283,7 +283,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
         const statusCircle = document.getElementById('statusCircle');
         const statusText = document.getElementById('statusText');
 
-        async function checkURLStatus() {
+        async function checkWebsiteStatus() {
             try {
                 const response = await fetch(url);
                 if (response.ok) {
@@ -302,7 +302,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
             }
         }
 
-        checkURLStatus();
+        checkWebsiteStatus();
     </script>
   
 </body>
