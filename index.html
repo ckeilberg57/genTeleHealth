@@ -33,6 +33,32 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
   height: 100%;
   border: none;
 }
+
+          .circle {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-right: 10px;
+            animation: blink 1s infinite alternate;
+        }
+
+        @keyframes blink {
+            0% {
+                opacity: 0.7;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .green {
+            background-color: green;
+        }
+  
 </style>
 </head>
 <body class="w3-black">
@@ -136,6 +162,8 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     <hr style="width:200px" class="w3-opacity">
     <p>Pexip is a best-in-class fully customizable, flexible, and scalable video engine powering both small-to-large HealthCare clients and TeleHealth providers
     </p>
+    <div class="circle red" id="statusCircle"></div>
+    <span id="statusText">Lab status: Checking...</span>
   
     <button class="w3-button w3-light-grey w3-padding-large w3-section">
       <a href="https://pexip.github.io/pexip-genesys-agent-blueprint/customer-app/"
@@ -250,5 +278,33 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 <!-- END PAGE CONTENT -->
 </div>
 
+    <script>
+        const url = 'https://cklab-pexmgr.ck-collab-engtest.com';
+
+        const statusCircle = document.getElementById('statusCircle');
+        const statusText = document.getElementById('statusText');
+
+        async function checkURLStatus() {
+            try {
+                const response = await fetch(url);
+                if (response.status >= 200 && response.status < 300) {
+                    statusCircle.classList.remove('red');
+                    statusCircle.classList.add('green');
+                    statusText.textContent = 'URL status: Accessible';
+                } else {
+                    statusCircle.classList.remove('green');
+                    statusCircle.classList.add('red');
+                    statusText.textContent = 'URL status: Not Accessible';
+                }
+            } catch (error) {
+                statusCircle.classList.remove('green');
+                statusCircle.classList.add('red');
+                statusText.textContent = 'URL status: Not Accessible';
+            }
+        }
+
+        checkURLStatus();
+    </script>
+  
 </body>
 </html>
