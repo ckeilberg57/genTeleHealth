@@ -34,22 +34,6 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
   border: none;
 }
 
-  .status-circle {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  margin: 10px;
-  display: inline-block;
-}
-
-.green {
-  background-color: green;
-}
-
-.red {
-  background-color: red;
-}
-  
 </style>
 </head>
 <body class="w3-black">
@@ -153,9 +137,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     <hr style="width:200px" class="w3-opacity">
     <p>Pexip is a best-in-class fully customizable, flexible, and scalable video engine powering both small-to-large HealthCare clients and TeleHealth providers
     </p>
-    <button id="toggleButton">Set Pexip Infinity Lab Status (Green = Active / Red = Powered Off</button>
-    <div class="status-circle" id="statusCircle"></div>
-    <br>
+
     <button class="w3-button w3-light-grey w3-padding-large w3-section">
       <a href="https://pexip.github.io/pexip-genesys-agent-blueprint/customer-app/"
          onclick="window.open('https://pexip.github.io/pexip-genesys-agent-blueprint/customer-app/', 
@@ -268,24 +250,6 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 
 <!-- END PAGE CONTENT -->
 </div>
-
-<script>
-const toggleButton = document.getElementById('toggleButton');
-const statusCircle = document.getElementById('statusCircle');
-let isGreen = true;
-
-toggleButton.addEventListener('click', () => {
-  if (isGreen) {
-    statusCircle.classList.remove('green');
-    statusCircle.classList.add('red');
-      isGreen = false;
-  } else {
-    statusCircle.classList.remove('red');
-    statusCircle.classList.add('green');
-    isGreen = true;
-  }
-});
-</script>
   
 </body>
 </html>
