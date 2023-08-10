@@ -289,16 +289,16 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
                 if (response.status >= 200 && response.status < 300) {
                     statusCircle.classList.remove('red');
                     statusCircle.classList.add('green');
-                    statusText.textContent = 'URL status: Accessible';
+                    statusText.textContent = 'Lab status: Accessible';
                 } else {
                     statusCircle.classList.remove('green');
                     statusCircle.classList.add('red');
-                    statusText.textContent = 'URL status: Not Accessible';
+                    statusText.textContent = 'Lab status: Not Accessible';
                 }
             } catch (error) {
                 statusCircle.classList.remove('green');
                 statusCircle.classList.add('red');
-                statusText.textContent = 'URL status: Not Accessible';
+                statusText.textContent = 'Lab status: Not Accessible';
             }
         }
 
