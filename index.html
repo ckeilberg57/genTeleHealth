@@ -162,9 +162,8 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     <hr style="width:200px" class="w3-opacity">
     <p>Pexip is a best-in-class fully customizable, flexible, and scalable video engine powering both small-to-large HealthCare clients and TeleHealth providers
     </p>
-    <div class="circle red" id="statusCircle"></div>
-    <span id="statusText">Lab status: Checking...</span>
-  
+    <div class="circle red" id="statusCircle"></div> <span id="statusText">Lab status: Checking...</span>
+    <br>
     <button class="w3-button w3-light-grey w3-padding-large w3-section">
       <a href="https://pexip.github.io/pexip-genesys-agent-blueprint/customer-app/"
          onclick="window.open('https://pexip.github.io/pexip-genesys-agent-blueprint/customer-app/', 
@@ -279,7 +278,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 </div>
 
     <script>
-        const url = 'https://cklab-pexmgr.ck-collab-engtest.com';
+        const url = 'https://cklab-pexmgr.ck-collab-engtest.com/admin/login/?next=/admin/conferencingstatus/deploymentgraph/deployment_graph/';
 
         const statusCircle = document.getElementById('statusCircle');
         const statusText = document.getElementById('statusText');
