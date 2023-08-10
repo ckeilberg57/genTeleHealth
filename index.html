@@ -34,30 +34,21 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
   border: none;
 }
 
-          .circle {
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            margin-right: 10px;
-            animation: blink 1s infinite alternate;
-        }
+  .status-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 10px;
+  display: inline-block;
+}
 
-        @keyframes blink {
-            0% {
-                opacity: 0.7;
-            }
-            100% {
-                opacity: 1;
-            }
-        }
+.green {
+  background-color: green;
+}
 
-        .red {
-            background-color: red;
-        }
-
-        .green {
-            background-color: green;
-        }
+.red {
+  background-color: red;
+}
   
 </style>
 </head>
@@ -162,7 +153,8 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     <hr style="width:200px" class="w3-opacity">
     <p>Pexip is a best-in-class fully customizable, flexible, and scalable video engine powering both small-to-large HealthCare clients and TeleHealth providers
     </p>
-    <div class="circle red" id="statusCircle"></div> <span id="statusText">Lab status: Checking...</span>
+    <button id="toggleButton">Toggle Status</button>
+    <div class="status-circle" id="statusCircle"></div>
     <br>
     <button class="w3-button w3-light-grey w3-padding-large w3-section">
       <a href="https://pexip.github.io/pexip-genesys-agent-blueprint/customer-app/"
@@ -277,33 +269,23 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 <!-- END PAGE CONTENT -->
 </div>
 
-    <script>
-        const url = 'https://cklab-pexmgr.ck-collab-engtest.com/admin/login/?next=/admin/conferencingstatus/deploymentgraph/deployment_graph/';
+<script>
+const toggleButton = document.getElementById('toggleButton');
+const statusCircle = document.getElementById('statusCircle');
+let isGreen = true;
 
-        const statusCircle = document.getElementById('statusCircle');
-        const statusText = document.getElementById('statusText');
-
-        async function checkWebsiteStatus() {
-            try {
-                const response = await fetch(url);
-                if (response.ok) {
-                    statusCircle.classList.remove('red');
-                    statusCircle.classList.add('green');
-                    statusText.textContent = 'Lab status: Accessible';
-                } else {
-                    statusCircle.classList.remove('green');
-                    statusCircle.classList.add('red');
-                    statusText.textContent = 'Lab status: Not Accessible';
-                }
-            } catch (error) {
-                statusCircle.classList.remove('green');
-                statusCircle.classList.add('red');
-                statusText.textContent = 'Lab status: Not Accessible';
-            }
-        }
-
-        checkWebsiteStatus();
-    </script>
+toggleButton.addEventListener('click', () => {
+  if (isGreen) {
+    statusCircle.classList.remove('green');
+    statusCircle.classList.add('red');
+      isGreen = false;
+  } else {
+    statusCircle.classList.remove('red');
+    statusCircle.classList.add('green');
+    isGreen = true;
+  }
+});
+</script>
   
 </body>
 </html>
