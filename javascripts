@@ -1,4 +1,5 @@
-  <script>
+// script.js
+
     function openWindows() {
       // URLs for the two new windows
       var url1 = 'https://cklab-edges.ck-collab-engtest.com/webapp3/?name=Patient%20#1&conference=genbreakoutrooms&role=guest';
@@ -12,4 +13,3 @@
         var window2 = window.open(url2, '_blank');
       }, 1000); // Adjust the delay as needed
     }
-  </script>
