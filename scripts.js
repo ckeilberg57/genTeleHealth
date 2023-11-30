@@ -1,5 +1,7 @@
 // script.js
 
+console.log("Script loaded");
+
     function openWindows() {
       // URLs for the two new windows
       var url1 = 'https://cklab-edges.ck-collab-engtest.com/webapp3/?name=Patient%20#1&conference=genbreakoutrooms&role=guest';
