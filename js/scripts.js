@@ -3,7 +3,7 @@
 function openWindows() {
       // URLs for the two new windows
       var url1 = 'https://cklab-edges.ck-collab-engtest.com/webapp3/step-by-step?name=Patient%20One&conference=genbreakoutrooms&role=guest';
-      var url2 = 'https://cklab-edges.ck-collab-engtest.com/webapp3/step-by-step?name=Patient%20Two&conference=genbreakoutrooms&role=guest';
+      var url2 = 'https://cklab-edges.ck-collab-engtest.com/webapp3/?name=Patient%20Two&conference=genbreakoutrooms&role=guest&callType=video&join=1';
 
       // Open the first window
       var window1 = window.open(url1, '_blank');
